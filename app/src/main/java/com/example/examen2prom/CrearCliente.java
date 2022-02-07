@@ -2,6 +2,7 @@ package com.example.examen2prom;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.widget.Button;
@@ -31,15 +32,26 @@ public class CrearCliente extends AppCompatActivity {
 
         // Metodo onClick del boton crear, añade el cliente a la BBDD
         crear.setOnClickListener(view -> {
-            String consulta = "INSERT INTO Clientes " +
-                    "(dni, nombre, direccion, telefono) " +
-                    "VALUES ('"+ dni.getText().toString() + "', '" +
-                    nombre.getText().toString() + "', '" +
-                    direccion.getText().toString() + "', '" +
-                    telefono.getText().toString() + "')";
-            db.execSQL(consulta);
-            db.close();
-            finish();
+
+            if(dni.getText().toString().length() != 8) {
+                new AlertDialog.Builder(CrearCliente.this)
+                        .setTitle(R.string.error)
+                        .setMessage(R.string.el_dni)
+                        .setCancelable(false)
+                        .setPositiveButton(R.string.ok, (dialogInterface2, j) -> dialogInterface2.cancel())
+                        .show();
+            }
+            else {
+                String consulta = "INSERT INTO Clientes " +
+                        "(dni, nombre, direccion, telefono) " +
+                        "VALUES ('"+ dni.getText().toString() + "', '" +
+                        nombre.getText().toString() + "', '" +
+                        direccion.getText().toString() + "', '" +
+                        telefono.getText().toString() + "')";
+                db.execSQL(consulta);
+                db.close();
+                finish();
+            }
         });
 
 

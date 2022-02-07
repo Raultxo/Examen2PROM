@@ -40,15 +40,26 @@ public class CrearFactura extends AppCompatActivity {
             @SuppressLint("Recycle") Cursor c = db.rawQuery(consulta, new String[] {dniABuscar});
 
             if(c.moveToFirst()) {
-                String consulta2 = "INSERT INTO Facturas " +
-                        "(num, dni, concepto, valor) " +
-                        "VALUES ("+ num.getText().toString() + ", " +
-                        dni.getText().toString() + ", '" +
-                        concepto.getText().toString() + "', " +
-                        valor.getText().toString() + ")";
-                db.execSQL(consulta2);
-                db.close();
-                finish();
+
+                if(num.getText().toString().length() == 0) {
+                    new AlertDialog.Builder(CrearFactura.this)
+                            .setTitle(R.string.error)
+                            .setMessage(R.string.numero_factura)
+                            .setCancelable(false)
+                            .setPositiveButton(R.string.ok, (dialogInterface2, j) -> dialogInterface2.cancel())
+                            .show();
+                }
+                else {
+                    String consulta2 = "INSERT INTO Facturas " +
+                            "(num, dni, concepto, valor) " +
+                            "VALUES ("+ num.getText().toString() + ", " +
+                            dni.getText().toString() + ", '" +
+                            concepto.getText().toString() + "', " +
+                            valor.getText().toString() + ")";
+                    db.execSQL(consulta2);
+                    db.close();
+                    finish();
+                }
             }
             else {
                 new AlertDialog.Builder(CrearFactura.this)

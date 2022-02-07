@@ -33,4 +33,6 @@
     <string name="fehca_hora">FEHCA / HORA:</string>
     <string name="temperatura">TEMPERATURA:</string>
     <string name="volver">VOLVER</string>
+    <string name="el_dni">El DNI no es de 8 numeros</string>
+    <string name="numero_factura">El numero de la factura esta mal</string>
 </resources>
