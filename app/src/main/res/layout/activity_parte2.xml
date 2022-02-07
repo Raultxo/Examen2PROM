@@ -82,22 +82,24 @@
         android:textSize="20sp"/>
 
     <FrameLayout
+        android:id="@+id/frameLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="10sp"
-        app:layout_constraintTop_toBottomOf="@+id/txtLocalidad"
-        app:layout_constraintStart_toStartOf="parent"
+        android:background="@color/gray"
         app:layout_constraintEnd_toEndOf="parent"
-        android:background="@color/gray">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtLocalidad">
+
         <TableLayout
-            android:layout_marginVertical="10sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginVertical="10sp"
             tools:layout_editor_absoluteX="1dp">
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" >
+                android:layout_height="match_parent">
 
                 <TextView
                     android:id="@+id/textView6"
@@ -105,19 +107,19 @@
                     android:layout_height="wrap_content"
                     android:text="@string/fehca_hora"
                     android:textColor="@color/black"
-                    android:textSize="20sp"/>
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/fechaHora"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/black"
-                    android:textSize="20sp"/>
+                    android:textSize="20sp" />
             </TableRow>
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" >
+                android:layout_height="match_parent">
 
                 <TextView
                     android:id="@+id/textView8"
@@ -125,19 +127,19 @@
                     android:layout_height="wrap_content"
                     android:text="@string/temperatura"
                     android:textColor="@color/black"
-                    android:textSize="20sp"/>
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/temperatura"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/black"
-                    android:textSize="20sp"/>
+                    android:textSize="20sp" />
             </TableRow>
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" >
+                android:layout_height="match_parent">
 
                 <ImageView
                     android:id="@+id/imgEstado"
@@ -145,17 +147,25 @@
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
                     android:maxWidth="40sp"
-                    android:maxHeight="40sp"
-                    />
+                    android:maxHeight="40sp" />
+
                 <TextView
                     android:id="@+id/estado"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/black"
-                    android:textSize="20sp"/>
+                    android:textSize="20sp" />
             </TableRow>
 
         </TableLayout>
     </FrameLayout>
 
+    <Button
+        android:id="@+id/volver"
+        android:text="@string/volver"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
 </androidx.constraintlayout.widget.ConstraintLayout>

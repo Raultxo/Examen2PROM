@@ -27,6 +27,10 @@ public class CrearFactura extends AppCompatActivity {
         EditText concepto = findViewById(R.id.concepto);
         EditText valor = findViewById(R.id.valor);
         Button crear = findViewById(R.id.crear);
+        Button volver = findViewById(R.id.volver);
+
+        // Metodo onClick del boton volver, vuelve a la ventana principal
+        volver.setOnClickListener(view -> finish());
 
         // Metodo onClick del boton crear, busca si existe el dni, en caso de que exista, crea la factura
         // Si no existe, saca un dialog

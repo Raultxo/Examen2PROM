@@ -24,6 +24,10 @@ public class CrearCliente extends AppCompatActivity {
         EditText direccion = findViewById(R.id.direccion);
         EditText telefono = findViewById(R.id.telefono);
         Button crear = findViewById(R.id.crear);
+        Button volver = findViewById(R.id.volver);
+
+        // Metodo onClick del boton volver, vuelve a la ventana principal
+        volver.setOnClickListener(view -> finish());
 
         // Metodo onClick del boton crear, añade el cliente a la BBDD
         crear.setOnClickListener(view -> {

@@ -17,6 +17,7 @@ public class Parte2 extends AppCompatActivity {
     private TextView txtHora, txtTemperatura, txtEstado;
     private ImageView imgEstado;
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,24 +32,28 @@ public class Parte2 extends AppCompatActivity {
         Button bilbao = findViewById(R.id.bilbao);
         Button vitoria = findViewById(R.id.vitoria);
         Button donosti = findViewById(R.id.donosti);
+        Button volver = findViewById(R.id.volver);
+
+        // Metodo onClick del boton volver, vuelve a la ventana principal
+        volver.setOnClickListener(view -> finish());
 
         // Metodo onClick del boton bilbao, cargar los datos de la pagina de bilbao
         bilbao.setOnClickListener(view -> {
-            txtLocalidad.setText(bilbao.getText());
+            txtLocalidad.setText(" " + bilbao.getText());
             url[0] = "https://api.tutiempo.net/xml/?lan=es&apid=qsTX4X4qq44as6Q&lid=8050";
             cargarConSAXSimplificado();
         });
 
         // Metodo onClick del boton vitoria, cargar los datos de la pagina de vitoria
         vitoria.setOnClickListener(view -> {
-            txtLocalidad.setText(vitoria.getText());
+            txtLocalidad.setText(" " + vitoria.getText());
             url[0] = "https://api.tutiempo.net/xml/?lan=es&apid=qsTX4X4qq44as6Q&lid=8043";
             cargarConSAXSimplificado();
         });
 
         // Metodo onClick del boton donosti, cargar los datos de la pagina de donosti
         donosti.setOnClickListener(view ->{
-            txtLocalidad.setText(donosti.getText());
+            txtLocalidad.setText(" " + donosti.getText());
             url[0] = "https://api.tutiempo.net/xml/?lan=es&apid=qsTX4X4qq44as6Q&lid=4917";
             cargarConSAXSimplificado();
         });
@@ -74,9 +79,9 @@ public class Parte2 extends AppCompatActivity {
         // Metodo onPostExecute, añade los datos de ese Tiempo a los Views
         @SuppressLint("SetTextI18n")
         protected void onPostExecute(Boolean result) {
-            txtHora.setText(tiempo.getDia() + "/" + tiempo.getHora());
-            txtEstado.setText(tiempo.getEstado());
-            txtTemperatura.setText(tiempo.getTemperatura() + " (Min: " + tiempo.getTemperatura_min() + " / Max: " + tiempo.getTemperatura_max() + ")");
+            txtHora.setText(" " + tiempo.getDia() + "/" + tiempo.getHora());
+            txtEstado.setText(" " + tiempo.getEstado());
+            txtTemperatura.setText(" " + tiempo.getTemperatura() + " (Min: " + tiempo.getTemperatura_min() + " / Max: " + tiempo.getTemperatura_max() + ")");
 
             String icon = "a" + tiempo.getIcono();
             Resources res = getResources();

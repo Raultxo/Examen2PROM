@@ -88,5 +88,11 @@
             android:layout_height="wrap_content"
             android:text="@string/crear" />
     </TableRow>
-
+    <TableRow>
+        <Button
+            android:id="@+id/volver"
+            android:text="@string/volver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </TableRow>
 </TableLayout>

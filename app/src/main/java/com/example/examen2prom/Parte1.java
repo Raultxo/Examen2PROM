@@ -37,9 +37,12 @@ public class Parte1 extends AppCompatActivity {
         Button modificarCliente = findViewById(R.id.modificarCliente);
         Button crearFactura = findViewById(R.id.crearFactura);
         Button consultarFacturas = findViewById(R.id.consultarFacturas);
+        Button volver = findViewById(R.id.volver);
         TextView facturas = findViewById(R.id.facturas);
-
         cargarSpinner();
+
+        // Metodo onClick del boton volver, vuelve a la ventana principal
+        volver.setOnClickListener(view -> finish());
 
         // Metodo onClick del boton crearCliente, llama a la actividad para crear el cliente
         crearCliente.setOnClickListener(view -> {
