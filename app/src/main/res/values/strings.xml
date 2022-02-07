@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">Examen2PROM</string>
+    <string name="dni">DNI:</string>
+    <string name="nombre">NOMBRE:</string>
+    <string name="direccion">DIRECCION:</string>
+    <string name="telefono">TELEFONO:</string>
+    <string name="crear">CREAR</string>
+    <string name="num">NUM:</string>
+    <string name="concepto">CONCEPTO:</string>
+    <string name="valor">VALOR:</string>
+    <string name="examen">EXAMEN EVALUACION 2 \n Raúl Estrada García</string>
+    <string name="parte_1">Parte 1</string>
+    <string name="parte_2">Parte 2</string>
+    <string name="salir">SALIR</string>
+    <string name="editar">EDITAR</string>
+    <string name="crear_cliente">CREAR CLIENTE</string>
+    <string name="modificar_cliente">MODIFICAR CLIENTE</string>
+    <string name="crear_factura">CREAR FACTURA</string>
+    <string name="consultar_facturas">CONSULTAR FACTURAS</string>
+    <string name="adios">ADIOOOOOS</string>
+    <string name="mensajeAdios">Esperamos verle pronto de nuevo</string>
+    <string name="error">ERROR</string>
+    <string name="cliente_no">Ese cliente no existe</string>
+    <string name="ok">OK</string>
+    <string name="insertar_dni">Inserta el DNI que quieras modificar</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="el_tiempo">El tiempo</string>
+    <string name="escoger">Escoge una de la siguientes localidades</string>
+    <string name="bilbao">BILBO-BILBAO</string>
+    <string name="vitoria">VITORIA-GASTEIZ</string>
+    <string name="donosti">DONOSTIA-SAN SEBASTIAN</string>
+    <string name="tiempo_en">Tiempo en:</string>
+    <string name="fehca_hora">FEHCA / HORA:</string>
+    <string name="temperatura">TEMPERATURA:</string>
+</resources>
